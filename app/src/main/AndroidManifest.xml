@@ -11,9 +11,9 @@
         android:roundIcon="@drawable/globe"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CurrencyConverter"
-                    android:label="Currency Converter"
-            ></activity>
+        <activity
+            android:name=".CurrencyConverter"
+            android:label="Currency Converter" />
         <activity android:name=".Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,9 +21,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Weather"
+        <activity
+            android:name=".Weather"
             android:theme="@style/HiddenTitleTheme">
-        android:label="Weather"></activity>
+            android:label="Weather">
+        </activity>
+        <activity android:name=".translator" />
+        <activity android:name=".time"></activity>
     </application>
 
 </manifest>

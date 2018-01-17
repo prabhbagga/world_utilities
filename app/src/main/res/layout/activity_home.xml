@@ -18,37 +18,57 @@
             android:background="?android:attr/selectableItemBackground"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:padding="5dp"
             android:layout_weight="1"
             android:scaleType="fitCenter"
             android:onClick="Currencyconverter"
             android:src="@drawable/cc"
             />
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/wc"
-            android:background="?android:attr/selectableItemBackground"
 
-            android:scaleType="fitCenter"
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        <!--<ImageButton-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:src="@drawable/wc"-->
+            <!--android:background="?android:attr/selectableItemBackground"-->
+            <!--android:padding="5dp"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--/>-->
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:src="@drawable/w3"
             android:onClick="weather"
-            android:scaleType="fitCenter"
+            android:padding="5dp"
+            android:scaleType="centerInside"
             android:background="?android:attr/selectableItemBackground"
             android:layout_weight="1"/>
-        <View
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageButton
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@drawable/translator"
+            android:onClick="translate"
+            android:scaleType="fitCenter"
+            android:padding="5dp"
+            />
+        <ImageButton
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:src="@drawable/wc"
+        android:onClick="worldclock"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
+        />
     </LinearLayout>
 </LinearLayout>
 </FrameLayout>

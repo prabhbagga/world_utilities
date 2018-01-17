@@ -22,4 +22,14 @@ public class Home extends AppCompatActivity {
         Intent i =new Intent(this,Weather.class);
         startActivity(i);
     }
+    public void translate(View view)
+    {
+        Intent i =new Intent(this,translator.class);
+        startActivity(i);
+    }
+    public void worldclock(View view)
+    {
+        Intent i =new Intent(this,time.class);
+        startActivity(i);
+    }
 }

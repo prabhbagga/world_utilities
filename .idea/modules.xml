@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Currencyconvertor.iml" filepath="$PROJECT_DIR$/Currencyconvertor.iml" />
+      <module fileurl="file://C:\Users\Prabhdeep\Desktop\world_utilities\Currencyconvertor.iml" filepath="C:\Users\Prabhdeep\Desktop\world_utilities\Currencyconvertor.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/world_utilities.iml" filepath="$PROJECT_DIR$/world_utilities.iml" />
     </modules>
   </component>
 </project>

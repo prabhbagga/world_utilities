@@ -60,7 +60,7 @@ public class CurrencyConverter extends AppCompatActivity {
     TextView tvRate;
     String CURRENCY_1;
     String CURRENCY_2;
-    Integer Value;
+    Double Value;
     public static final String[] currencies ={"Select Currency","US Dollars","Japanese Yen","Bulgarian Iev","Czech Koruna","Euro","Danish Krone","Pound Sterling",
             "Hungarian Forint","Polish Zloty","Romaninan Leu","Swedish Krona","Swiss Franc","Norwegian Krone","Croatian Kuna","Russian Rouble",
             "Turkish Lira","Australian Dollar","Brazilian Real","Canadian Dollar","Chinese Yuan Renminbi","Hong Kong Dollar","Indonesian Rupiah",
@@ -108,7 +108,7 @@ public class CurrencyConverter extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 EditText etValue=findViewById(R.id.etValue);
-                Value = Integer.valueOf(etValue.getText().toString());
+                Value = Double.valueOf(etValue.getText().toString());
                 new DownloadExchangeRate().execute();
             }
         });
@@ -119,8 +119,8 @@ class DownloadExchangeRate extends AsyncTask<Void, Void, Double> {
 
     @Override
     protected Double doInBackground(Void... voids) {
-       String s;
-       Double s1=0.0;
+
+       double s1=0.0;
         try {
             URL url = new URL("https://api.fixer.io/latest?base="+CURRENCY_1+"&symbols="+CURRENCY_2);
             HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
@@ -133,9 +133,7 @@ class DownloadExchangeRate extends AsyncTask<Void, Void, Double> {
             }
             String data = sb.toString();
             JSONObject er = new JSONObject(data);
-            s = er.getString("rates");
-            JSONObject er1= new JSONObject(s);
-            s1 = er1.getDouble(CURRENCY_2);
+            s1 = er.getJSONObject("rates").getDouble(CURRENCY_2);
             Log.d("123", "doInBackground: "+s1);
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -153,8 +151,9 @@ class DownloadExchangeRate extends AsyncTask<Void, Void, Double> {
     protected void onPostExecute(Double s) {
         super.onPostExecute(s);
         Double ans= s*Value;
+        Log.d("456", "onPostExecute: "+Value);
         String ans1 = Double.toString(ans);
-        Log.d("456", "onPostExecute: "+s);
+        Log.d("456", "onPostExecute: "+ans);
         tvRate.setText(ans1);
 
     }
